@@ -1,16 +1,17 @@
-import { redirect } from "next/navigation";
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-/**
- * Redirects to a specified path with an encoded message as a query parameter.
- * @param {('error' | 'success')} type - The type of message, either 'error' or 'success'.
- * @param {string} path - The path to redirect to.
- * @param {string} message - The message to be encoded and added as a query parameter.
- * @returns {never} This function doesn't return as it triggers a redirect.
- */
-export function encodedRedirect(
-  type: "error" | "success",
-  path: string,
-  message: string,
-) {
-  return redirect(`${path}?${type}=${encodeURIComponent(message)}`);
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
 }
+
+export function generateYears(startYear: number) {
+  const currentYear = new Date().getFullYear();
+  const years = [];
+  startYear = startYear || 1980;  
+  while (startYear <= currentYear) {
+      years.push(startYear++);
+  }   
+  return years;
+}
+
