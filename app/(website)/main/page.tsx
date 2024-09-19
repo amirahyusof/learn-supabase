@@ -1,13 +1,16 @@
 import React from 'react'
 import { Card } from "@/components/ui/card"
 import { 
+  Tabs,
   TabsList, 
+  TabsContent,
   TabsTrigger 
-} from '@/components/tabs-links'
+} from '@/components/ui/tabs'
 import Categories from '../categories/page'
 import AddBook from '../add-book/page'
 import { columns, dataBook } from '@/components/data-table/column'
 import { BookDataTable } from '@/components/data-table/data-table'
+
 
 
 async function getData(): Promise<dataBook[]> {
@@ -45,20 +48,33 @@ async function MainPage(){
       {/* <SearchTool /> */}
 
       <div className='mx-auto justify-between px-4 lg:w-[900px] mt-10'>
-        <div>
+        <Tabs defaultValue="book">
           <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger href="/main/all-books" >All Books</TabsTrigger>
-            <TabsTrigger href="/main/categories">Categories</TabsTrigger>
-            <TabsTrigger href="/main/add-book">Add New Book</TabsTrigger>
+            <TabsTrigger value="all">All Books</TabsTrigger>
+            <TabsTrigger value="categories">Categories</TabsTrigger>
+            <TabsTrigger value="">Add New Book</TabsTrigger>
           </TabsList>
-        </div>
+        
 
-          <Card className='mt-4'>
-            <BookDataTable 
-              columns={columns} 
-              data = {data} 
-            />
-          </Card>
+          <TabsContent value='all'>
+            <Card className='mt-4'>
+              <BookDataTable 
+                columns={columns} 
+                data = {data} 
+              />
+            </Card>
+          </TabsContent>
+
+          <TabsContent value='categories'>
+            <Categories />
+          </TabsContent>
+
+          <TabsContent value='add'>
+            <AddBook />
+          </TabsContent>
+
+          
+        </Tabs>
       </div>
     </main>
   )
