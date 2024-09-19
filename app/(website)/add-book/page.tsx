@@ -1,11 +1,11 @@
 import React from 'react'
+import BookForm from './form'
 
-const AddBook = () => {
+export default async function AddBook(){
   return (
     <div>
-      AddBook
+      <BookForm />
     </div>
   )
 }
 
-export default AddBook
