@@ -17,9 +17,9 @@ export default function BookForm (){
   const [state, formAction] = useFormState(createBook, initialState);
    
   return(
-    <main className="mx-auto w-[600px] md:w-[800px] justify-center h-screen mt-10 text-black">
+    <main className="mx-auto justify-center mb-4 p-4 text-black">
       <form action={formAction}>
-        <div className="rounded-md bg-red-300 p-4 md:p-6">
+        <div>
 
           {/*Title */}
           <div className="mb-4">

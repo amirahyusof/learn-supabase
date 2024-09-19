@@ -31,7 +31,7 @@ export function BookDataTable<TData, TValue>({
   })
  
   return (
-    <div className="rounded-md border">
+    <div className="rounded-md borderp-4 md:p-6 text-black">
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (

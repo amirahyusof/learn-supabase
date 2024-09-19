@@ -43,21 +43,21 @@ async function MainPage(){
   const data = await getData()
 
   return (
-    <main className='w-full h-screen bg-[#FFD1D1] mx-auto justify-center'>
+    <main className='w-full h-screen bg-[#FFF5E4] mx-auto justify-center'>
       <h1 className='text-3xl text-center p-5 text-slate-500'> Book Collection Tracker </h1>
       {/* <SearchTool /> */}
 
       <div className='mx-auto justify-between px-4 lg:w-[900px] mt-10'>
         <Tabs defaultValue="book">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="all">All Books</TabsTrigger>
-            <TabsTrigger value="categories">Categories</TabsTrigger>
-            <TabsTrigger value="">Add New Book</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 text-black">
+            <TabsTrigger value="all" className='bg-[#FFE3E1]'>All Books</TabsTrigger>
+            <TabsTrigger value="categories" className='bg-[#FFE3E1]'>Categories</TabsTrigger>
+            <TabsTrigger value="add" className='bg-[#FFE3E1]'>Add New Book</TabsTrigger>
           </TabsList>
         
 
           <TabsContent value='all'>
-            <Card className='mt-4'>
+            <Card className='mt-4 bg-[#FFD1D1] border-white '>
               <BookDataTable 
                 columns={columns} 
                 data = {data} 
@@ -66,11 +66,15 @@ async function MainPage(){
           </TabsContent>
 
           <TabsContent value='categories'>
-            <Categories />
+            <Card className='mt-4 bg-[#FFD1D1] border-white '>
+              <Categories />
+            </Card>
           </TabsContent>
 
           <TabsContent value='add'>
-            <AddBook />
+            <Card className="bg-[#FFD1D1] mt-4 border-white">
+              <AddBook />
+            </Card>
           </TabsContent>
 
           
