@@ -10,6 +10,14 @@ export function EditButton(){
   )
 }
 
+export function ViewButton(){
+  return(
+    <Link href="">
+      View
+    </Link>
+  )
+}
+
 export function DeleteButton(){
   return(
     <Button variant="destructive">
