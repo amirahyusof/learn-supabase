@@ -11,8 +11,6 @@ import AddBook from '../add-book/page'
 import { columns, dataBook } from '@/components/data-table/column'
 import { BookDataTable } from '@/components/data-table/data-table'
 
-
-
 async function getData(): Promise<dataBook[]> {
   return [
     {
