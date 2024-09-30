@@ -5,7 +5,7 @@ import { Button } from './ui/button'
 export function EditButton(){
   return(
     <Link href={""}>
-      Edit
+      <span className='hover:text-pink-300'>Edit</span>
     </Link>
   )
 }
@@ -13,7 +13,7 @@ export function EditButton(){
 export function ViewButton(){
   return(
     <Link href="">
-      View
+      <span className='hover:text-pink-300'>View</span>
     </Link>
   )
 }

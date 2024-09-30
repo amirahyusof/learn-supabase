@@ -29,7 +29,7 @@ export const ColumnCategories: ColumnDef<dataBook>[] = [
     header: "Choices",
     cell:({row}) => {
       return (
-        <div className="flex justify-between gap-4 sm:gap-2 md:gap-0">
+        <div className="flex sm:gap-2 md:gap-0">
           <EditButton />
           <ViewButton />
         </div>
