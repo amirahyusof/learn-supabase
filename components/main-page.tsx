@@ -6,12 +6,10 @@ import {
   TabsContent,
   TabsTrigger 
 } from '@/components/ui/tabs'
-import Categories from '../categories/page'
-import AddBook from '../add-book/page'
+import Categories from '@/app/main/categories/page'
+import AddBook from '@/app/main/add-book/page'
 import { columns, dataBook } from '@/components/data-table/column'
 import { BookDataTable } from '@/components/data-table/data-table'
-
-
 
 async function getData(): Promise<dataBook[]> {
   return [
