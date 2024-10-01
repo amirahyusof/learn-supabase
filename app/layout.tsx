@@ -1,13 +1,12 @@
 
 import { ReactNode } from "react";
 import { Metadata } from "next";
+import { ClerkProvider } from '@clerk/nextjs'
+import {NextUIProvider} from "@nextui-org/react";
+import './globals.css'
 
-const defaultUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
 
 export const metadata : Metadata = {
-  metadataBase: new URL(defaultUrl),
   title: "Book Collection Tracker",
   description: "The fastest way to build apps with Next.js and Supabase",
 };
@@ -18,10 +17,14 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body>
+          <NextUIProvider>
+          {children}
+          </NextUIProvider>
+        </body>
+      </html>
+  </ClerkProvider>
   );
 }
