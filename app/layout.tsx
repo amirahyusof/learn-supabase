@@ -1,5 +1,3 @@
-
-import { ReactNode } from "react";
 import { Metadata } from "next";
 import { ClerkProvider } from '@clerk/nextjs'
 import {NextUIProvider} from "@nextui-org/react";
@@ -8,23 +6,25 @@ import './globals.css'
 
 export const metadata : Metadata = {
   title: "Book Collection Tracker",
-  description: "The fastest way to build apps with Next.js and Supabase",
+  description: "A Nextjs and Supabase app used to track reading of book ",
 };
 
 export default function RootLayout({
   children,
-}: {
-  children: ReactNode;
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body>
-          <NextUIProvider>
+    <html lang="en">
+      <head>
+        <title>Book Tracker Collection</title>
+      </head>
+      <body>
+        <ClerkProvider>
           {children}
-          </NextUIProvider>
-        </body>
-      </html>
-  </ClerkProvider>
+        </ClerkProvider>
+      </body>
+    </html>
+
   );
 }
