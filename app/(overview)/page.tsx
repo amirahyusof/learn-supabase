@@ -12,17 +12,20 @@ const MainPage = async () => {
     redirect('/dashboard')
   }
   return (
-    <section className='relative w-full border lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]'>
+    <section className='relative w-full min-h-screen lg:grid lg:grid-cols-2 overflow-hidden bg-[#FEFAE0]'>
       <div className='absolute inset-0 flex flex-col items-center justify-center text-center p-4 bg-opacity-60 bg-black lg:relative lg:bg-transparent lg:p-0'>
-        <div className='mx-auto grid w-[350px] gap-6 text-white lg:text-gray-700'>
-          <h1 className='text-3xl font-extrabold sm:text-xl'>Book Collection Tracker</h1>
-          <div className='grid gap-2 text-center'>
-            <Button>
+        <h1 className='text-3xl sm:text-5xl md:text-6xl font-extrabold text-white md:text-gray-700 mb-6'>
+          Book Collection Tracker
+        </h1>
+        
+        <div className='mx-auto flex lg:text-[#FF9494]'>
+          <div className='flex flex-col sm:flex-row gap-4'>
+            <Button className='text-gray-600 w-[200px] bg-[#FFD1D1] hover:bg-[#FF9494]' asChild>
               <Link href={'/sign-in'}>
                 Login
               </Link>
             </Button>
-            <Button>
+            <Button className='text-gray-600 w-[200px] bg-[#FFD1D1] hover:bg-[#FF9494]'asChild>
               <Link href={'/sign-up'}>
                 Sign Up
               </Link>
@@ -38,7 +41,7 @@ const MainPage = async () => {
           height={350}
           alt="illustration of book"
           loading="lazy"
-          className="h-full w-full object-cover"
+          className="h-screen w-full object-cover"
         />
       </div>
     </section>
