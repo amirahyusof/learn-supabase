@@ -6,42 +6,17 @@ import {
   TabsContent,
   TabsTrigger 
 } from '@/components/ui/tabs'
-import Categories from '@/app/main/categories/page'
-import AddBook from '@/app/main/add-book/page'
+import Categories from '@/app/(overview)/dashboard/categories/page'
+import AddBook from '@/app/(overview)/dashboard/add-book/page'
 import { columns, dataBook } from '@/components/data-table/column'
 import { BookDataTable } from '@/components/data-table/data-table'
 
-async function getData(): Promise<dataBook[]> {
-  return [
-    {
-      id:"001",
-      title: "The Great Gatsby",
-      author: "F. Scott Fitzgerald", 
-      genre: "Fiction", 
-      readingStatus: "finished",
-    },
-    {
-      id:"002",
-      title: "Atomic Habits",
-      author: "James Clear", 
-      genre: "Self-help", 
-      readingStatus: "want to read",
-    },
-    {
-      id:"003",
-      title: "1984",
-      author: "George Orwell", 
-      genre: "Dystopian", 
-      readingStatus: "reading",
-    },
-  ]
-}
 
-async function MainPage(){
-  const data = await getData()
 
+async function MainPage({ data }:{ data :dataBook[] }){
+ 
   return (
-    <main className='w-full h-screen bg-[#FFF5E4] mx-auto justify-center'>
+    <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
       <h1 className='text-3xl text-center p-5 text-slate-500'> Book Collection Tracker </h1>
       {/* <SearchTool /> */}
 
