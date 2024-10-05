@@ -6,8 +6,8 @@ import {
   TabsContent,
   TabsTrigger 
 } from '@/components/ui/tabs'
-import Categories from '@/app/dashboard/categories/page'
-import AddBook from '@/app/dashboard/add-book/page'
+import Categories from '@/app/(overview)/dashboard/categories/page'
+import AddBook from '@/app/(overview)/dashboard/add-book/page'
 import { columns, dataBook } from '@/components/data-table/column'
 import { BookDataTable } from '@/components/data-table/data-table'
 
